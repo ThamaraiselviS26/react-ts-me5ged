@@ -1,11 +1,22 @@
+import { useState } from 'react';
 import * as React from 'react';
+import ReactDOM from 'react-dom/client';
+
 import './style.css';
 
 export default function App2() {
+  const [name, setName] = useState('');
+
   return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+    <form>
+      <label>
+        Enter your name:
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </label>
+    </form>
   );
 }
